@@ -86,11 +86,12 @@ struct LocalObject {
 
   int64_t GetObjectSize() const { return object_info.GetObjectSize(); }
 
-  /// Allocation Info;
+  /// Mmap Allocation Info;
   Allocation allocation;
   /// Ray object info;
   ray::ObjectInfo object_info;
   /// Number of clients currently using this object.
+  /// TODO: ref_count probably shouldn't belong to LocalObject.
   mutable int ref_count;
   /// Unix epoch of when this object was created.
   int64_t create_time;
