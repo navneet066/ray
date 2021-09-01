@@ -76,9 +76,9 @@ spec:
                 {{- if .GPU }}
                 nvidia.com/gpu: {{ .GPU }}
                 {{- end }}
-          {{- if .Values.imagePullSecrets }}
+          {{- if $val.imagePullSecrets }}
           imagePullSecrets:
-          {{ toYaml .Values.imagePullSecrets | indent 10 }}
+          {{- toYaml $val.imagePullSecrets | nindent 10 }}
           {{- end }}
           {{- if .nodeSelector }}
           nodeSelector:
