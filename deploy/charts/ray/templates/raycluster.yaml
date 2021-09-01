@@ -78,7 +78,7 @@ spec:
                 {{- end }}
           {{- if .Values.imagePullSecrets }}
           imagePullSecrets:
-          {{ toYaml .Values.imagePullSecrets | indent 8 }}
+          {{ toYaml .Values.imagePullSecrets | indent 10 }}
           {{- end }}
           {{- if .nodeSelector }}
           nodeSelector:
